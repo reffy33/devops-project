@@ -7,11 +7,12 @@ export const CreateGroupPage: React.FC = () => {
 
   const { Formik } = formik;
   const [isLoading, setLoading] = useState(false)
+  var host = window.location.hostname;
   
   interface Data extends yup.InferType<typeof schema> {
   }
   
-  const url = 'http://localhost:8000/groups/'
+  const url = `http://${host}:8000/groups/`;
   const sendRequest = async (data: Data) => {
     setLoading(true)
     console.log(data);

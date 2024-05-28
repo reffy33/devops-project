@@ -7,11 +7,12 @@ export const NewMemberCard: React.FC<{ group_id: number, close: () => void }> = 
 
   const { Formik } = formik;
   const [isLoading, setLoading] = useState(false)
+  var host = window.location.hostname;
   
   interface Data extends yup.InferType<typeof schema> {
   }
   
-  const url = `http://localhost:8000/members/${group_id}`
+  const url = `http://${host}:8000/members/${group_id}`
   const sendRequest = async (data: Data) => {
     setLoading(true)
 

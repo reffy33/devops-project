@@ -10,10 +10,11 @@ export const MembersList: React.FC<{id: number}> = (props) => {
   const [members, setMembers] = useState<IMember[]>();
   const [isAdding, setIsAdding] = useState(false);
   const [isLoading, setLoading] = useState(false);
+  var host = window.location.hostname;
   
   useEffect(() => {
     setLoading(true)
-    fetch(`http://localhost:8000/members/group_members/${props.id}`)
+    fetch(`http://${host}:8000/members/group_members/${props.id}`)
     .then((responce) => {
       if (responce.ok) {
         return responce.json()

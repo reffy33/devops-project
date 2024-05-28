@@ -13,8 +13,9 @@ export enum ArtistType {
 export const ArtistsList: React.FC<{artistType?: ArtistType}> = (props) => {
   const [groups, setGroups] = useState<IGroup[]>();
   const [isLoading, setLoading] = useState(false);
+  var host = window.location.hostname;
 
-  var url = 'http://localhost:8000/groups/?limit=30'
+  var url = `http://${host}:8000/groups/?limit=30`
   if (props.artistType) {
     url = url + '&type=' + props.artistType
   }

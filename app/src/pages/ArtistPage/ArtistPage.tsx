@@ -9,10 +9,11 @@ export const ArtistPage: React.FC = () => {
   const [group, setGroup] = useState<IGroup>();
   const {id} = useParams();
   const [isLoading, setLoading] = useState(false);
+  var host = window.location.hostname;
 
   useEffect(() => {
     setLoading(true)
-    fetch(`http://localhost:8000/groups/${id}`)
+    fetch(`http://${host}:8000/groups/${id}`)
     .then((responce) => {
       if (responce.ok) {
         return responce.json()
