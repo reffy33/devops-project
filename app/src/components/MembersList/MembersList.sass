@@ -1,0 +1,28 @@
+.addmember-card
+  --gray-color: rgba(196, 196, 196, 0.7)
+  min-height: 100%
+  width: 400px
+
+  &:hover
+    --gray-color: #7F7F7F
+
+  &__body
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+  &__icon
+    width: 70px
+    height: 70px
+
+    & > svg
+      fill: var(--gray-color)
+
+  &__text, a
+    margin-top: 7px
+    color: var(--gray-color)
+    text-decoration: none
+    font-weight: bold
+    text-align: center
+    font-size: 18px
